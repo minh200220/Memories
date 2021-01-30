@@ -5,6 +5,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import postRoute from "./routes/posts.js";
+import userRoute from "./routes/users.js";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 
 app.use("/posts", postRoute);
+app.use("/user", userRoute);
 
 app.get("/", (req, res) => {
   res.send("Hello to Memories!");
